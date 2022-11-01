@@ -2,6 +2,7 @@ import urllib.request
 import json
 
 from yt_concate1.pipeline.steps.step import Step
+from yt_concate1.pipeline.steps.step import StepException
 from yt_concate1.settings import API_KEY
 
 
