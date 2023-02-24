@@ -8,7 +8,7 @@ class Editvideo(Step):
         for found in data:
             print(found.time)
             start, end = self.parse_caption_time(found.time)
-            video = VideoFileClip(found.yt.video_filepath).subclip(start, end)
+            video = VideoFileClip(found.yt.video_filepath).subclip(start, end) #found.yt.video_filepath???????
             clips.append(video)
             if len(clips) >= inputs['limits']:
                 break
@@ -23,6 +23,6 @@ class Editvideo(Step):
         return self.parse_time_str(start), self.parse_time_str(end)
 
     def parse_time_str(self, time_str):
-        h, m , s = time_str.split(':')
+        h, m, s = time_str.split(':')
         s, ms = s.split(',')
         return int(h), int(m), int(s), int(ms)/1000

@@ -6,7 +6,7 @@ from yt_concate1.settings import VIDEOS_DIR
 
 class DownloadVideos(Step):
     def process(self, data, inputs, utils):
-        yt_set = set([found.yt for found in data])
+        yt_set = set([found.yt for found in data])  # duplicated ones got eliminated
         print('videos to download=', len(yt_set))
 
         for yt in yt_set:

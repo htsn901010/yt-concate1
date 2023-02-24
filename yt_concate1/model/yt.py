@@ -3,6 +3,7 @@ import os
 from yt_concate1.settings import VIDEOS_DIR
 from yt_concate1.settings import CAPTIONS_DIR
 
+
 class YT:
     def __init__(self, url):
         self.url = url
@@ -10,7 +11,6 @@ class YT:
         self.caption_filepath = self.get_caption_filepath()
         self.video_filepath = self.get_video_filepath()
         self.captions = None
-
 
     @staticmethod
     def get_video_id_from_url(url):

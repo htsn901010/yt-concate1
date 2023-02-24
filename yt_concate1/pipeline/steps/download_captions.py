@@ -7,13 +7,12 @@ from .step import Step
 from .step import StepException
 
 
-
 class DownloadCaptions(Step):
     def process(self, data, inputs, utils):
         start = time.time()
         for yt in data:
             print('downloading caption for', yt.id)
-            if utils.caption_file_exists(yt.url):
+            if utils.caption_file_exists(yt):
                 print('found existing caption file')
                 continue
 
@@ -25,7 +24,7 @@ class DownloadCaptions(Step):
                 print('Error when downloading caption for', yt.url)
                 continue
 
-            text_file = open(utils.get_caption_filepath(yt.url), "w", encoding='utf-8')
+            text_file = open(yt.get_caption_filepath(), "w", encoding='utf-8')
             text_file.write(en_caption_convert_to_srt)
             text_file.close()
             break

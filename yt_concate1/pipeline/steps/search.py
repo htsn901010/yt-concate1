@@ -1,6 +1,7 @@
 from .step import Step
 from yt_concate1.model.found import Found
 
+
 class Search(Step):
     def process(self, data, inputs, utils):
         search_word = inputs['search_word']

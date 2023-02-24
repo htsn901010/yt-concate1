@@ -21,7 +21,7 @@ class Utils:
 
     def video_list_file_exists(self, channel_id):
         path = self.get_video_list_filepath(channel_id)
-        os.path.exists(path) and os.path.getsize(path) > 0
+        return os.path.exists(path) and os.path.getsize(path) > 0
 
     def caption_file_exists(self, yt):
         filepath = yt.caption_filepath
